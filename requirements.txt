@@ -1,0 +1,10 @@
+Flask
+Flask_SQLAlchemy
+Flask_Migrate
+pdfminer.six
+python-docx
+pandas
+scikit-learn
+spacy
+psycopg2-binary
+Werkzeug
