@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Upload Resumes</h2>
+<form method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="skills" class="form-label">Required Skills (comma-separated)</label>
+    <input type="text" name="skills" class="form-control" id="skills" placeholder="e.g. Python, Flask, SQL" required>
+  </div>
+  <div class="mb-3">
+    <label for="resumes" class="form-label">Choose Resumes</label>
+    <input type="file" name="resumes" class="form-control" id="resumes" accept=".pdf,.doc,.docx" multiple required>
+  </div>
+  <button type="submit" class="btn btn-success">Analyze</button>
+</form>
+{% endblock %}
