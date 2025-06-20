@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<div class="row mb-3">
+  <div class="col"><div class="alert alert-info">Total Resumes: <strong>{{ stats.total }}</strong></div></div>
+  <div class="col"><div class="alert alert-success">Avg Match %: <strong>{{ stats.avg_match }}%</strong></div></div>
+</div>
+<p>Preview last 10 uploads:</p>
+<table class="table">
+<thead><tr><th>Filename</th><th>Match %</th><th>Skills</th><th>Uploaded</th></tr></thead>
+<tbody>
+{% for r in resumes[-10:] %}
+<tr><td>{{ r.filename }}</td><td>{{ r.match_percent }}%</td><td>{{ r.skills }}</td><td>{{ r.uploaded_at.strftime('%Y-%m-%d %H:%M') }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
