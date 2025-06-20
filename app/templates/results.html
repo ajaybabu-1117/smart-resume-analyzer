@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Analysis Results</h2>
+<table class="table table-striped">
+  <thead><tr>
+    <th>#</th><th>Filename</th><th>Match %</th><th>Skills Found</th><th>Uploaded</th>
+  </tr></thead>
+  <tbody>
+    {% for r in resumes %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ r.filename }}</td>
+        <td>{{ r.match_percent }}%</td>
+        <td>{{ r.skills }}</td>
+        <td>{{ r.uploaded_at.strftime('%Y-%m-%d %H:%M') }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{{ url_for('main.download') }}" class="btn btn-outline-primary">Download CSV</a>
+{% endblock %}
